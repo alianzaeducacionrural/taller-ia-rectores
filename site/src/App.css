@@ -648,6 +648,56 @@
   }
 }
 
+.taller-bienvenida {
+  text-align: center;
+  background: linear-gradient(180deg, var(--turquesa-50) 0%, var(--color-superficie) 45%);
+}
+
+.taller-bienvenida-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--sombra);
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.taller-bienvenida h2 {
+  margin-bottom: 6px;
+}
+
+.taller-bienvenida .tarjeta-subtitulo {
+  margin-bottom: 8px;
+}
+
+.taller-bienvenida .taller-campo,
+.taller-bienvenida .taller-campos-fila,
+.taller-bienvenida .taller-acciones {
+  text-align: left;
+}
+
+.taller-campos-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 560px) {
+  .taller-campos-fila {
+    grid-template-columns: 1fr;
+  }
+}
+
+.taller-bienvenida-nota {
+  display: block;
+  margin: -6px 0 18px;
+}
+
 .taller-progreso {
   display: flex;
   flex-direction: column;
@@ -818,8 +868,17 @@
 
 .taller-estrategia-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.taller-estrategia-grid .taller-campo label {
+  font-size: 16px;
+}
+
+.taller-estrategia-grid .taller-campo textarea {
+  font-size: 16px;
+  padding: 14px 16px;
 }
 
 /* Panel del facilitador (/panel-facilitador) */
@@ -940,6 +999,7 @@
 }
 
 .panel-facilitador-tarjeta-estrategia .taller-estrategia-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 10px;
 }
 

@@ -33,12 +33,14 @@ export default function TallerRector() {
   );
 
   // Para el selector del taller: las 12 con panel propio + las que solo
-  // tienen acceso a la Vista general (sin dashboard individual).
+  // tienen acceso a la Vista general (sin dashboard individual) — todas
+  // juntas en orden alfabético, para que sea fácil encontrar la propia.
   const opcionesInstitucion = useMemo(
-    () => [
-      ...instituciones.map(([slug, meta]) => ({ slug, nombre: meta.nombre })),
-      ...INSTITUCIONES_SIN_DASHBOARD_PROPIO.map((i) => ({ slug: i.slug, nombre: i.nombre })),
-    ],
+    () =>
+      [
+        ...instituciones.map(([slug, meta]) => ({ slug, nombre: meta.nombre })),
+        ...INSTITUCIONES_SIN_DASHBOARD_PROPIO.map((i) => ({ slug: i.slug, nombre: i.nombre })),
+      ].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es')),
     [instituciones],
   );
 
@@ -65,6 +67,11 @@ export default function TallerRector() {
   const tienePanelPropio = institucionSlug !== '' && !SLUGS_SIN_DASHBOARD_PROPIO.has(institucionSlug);
   const urlPanelResultados = `${window.location.origin}${window.location.pathname}#/${tienePanelPropio ? `rector/${institucionSlug}` : 'general'}`;
   const desafio = `¿Cómo podría transformar ${desafioQue || '______'} para lograr que ${desafioPara || '______'}?`;
+
+  const descripcionSituacion = situacion
+    ? `${situacion}. ¿Qué está ocurriendo? ${respuestas.pregunta1} ¿A quién afecta? ${respuestas.pregunta2} ¿Qué estamos haciendo actualmente? ${respuestas.pregunta3} ¿Qué no está funcionando? ${respuestas.pregunta4} ¿Qué necesitaríamos cambiar? ${respuestas.pregunta5}`
+    : '[describir situación]';
+  const promptMomento2Paso2 = PROMPT_MOMENTO2_PASO2.replace('[describir situación]', descripcionSituacion);
 
   async function confirmarMomento1() {
     setError(null);
@@ -158,24 +165,29 @@ export default function TallerRector() {
       )}
 
       {paso === 'identificacion' && (
-        <section className="tarjeta">
+        <section className="tarjeta taller-bienvenida">
+          <span className="taller-bienvenida-icono">👋</span>
           <h2>Antes de empezar, cuéntanos quién eres</h2>
           <p className="tarjeta-subtitulo">Con esto identificamos tus envíos y te mandamos tu informe al terminar.</p>
-          <div className="taller-campo">
-            <label htmlFor="nombre">Tu nombre</label>
-            <input id="nombre" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre completo" />
+          <div className="taller-campos-fila">
+            <div className="taller-campo">
+              <label htmlFor="nombre">Tu nombre</label>
+              <input id="nombre" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre completo" />
+            </div>
+            <div className="taller-campo">
+              <label htmlFor="email">Tu correo electrónico</label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="tu@correo.com"
+              />
+            </div>
           </div>
-          <div className="taller-campo">
-            <label htmlFor="email">Tu correo electrónico</label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="tu@correo.com"
-            />
-            <span className="etiqueta-tenue">Al terminar el taller te enviamos ahí un PDF con toda tu ruta (Momento 1 y Momento 2).</span>
-          </div>
+          <span className="etiqueta-tenue taller-bienvenida-nota">
+            Al terminar el taller te enviamos al correo un PDF con toda tu ruta (Momento 1 y Momento 2).
+          </span>
           <div className="taller-campo">
             <label htmlFor="institucion">Tu institución</label>
             <select id="institucion" value={institucionSlug} onChange={(e) => setInstitucionSlug(e.target.value)}>
@@ -341,10 +353,10 @@ export default function TallerRector() {
         <section className="tarjeta">
           <h2>Momento 2 · Paso 2 — Pregúntele a la IA lo que usted todavía no está viendo</h2>
           <p className="tarjeta-subtitulo">
-            Reemplaza <code>[describir situación]</code> por lo que escribiste en el paso 1 y pégalo en tu IA de preferencia.
+            Ya completamos la situación con lo que escribiste en el paso 1 — copia y pégalo en tu IA de preferencia.
           </p>
-          <BotonCopiarPrompt texto={PROMPT_MOMENTO2_PASO2} />
-          <pre className="cta-prompt-texto">{PROMPT_MOMENTO2_PASO2}</pre>
+          <BotonCopiarPrompt texto={promptMomento2Paso2} />
+          <pre className="cta-prompt-texto">{promptMomento2Paso2}</pre>
           <div className="taller-acciones">
             <button type="button" className="taller-boton-secundario" onClick={() => setPaso('m2-paso1')}>
               Atrás

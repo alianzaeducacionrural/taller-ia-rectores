@@ -20,10 +20,12 @@ export default defineConfig(({ command, mode }) => {
   }
 
   return {
-    // GitHub Pages sirve este proyecto desde
+    // GitHub Pages sirve el build de este proyecto desde
     // alianzaeducacionrural.github.io/taller-ia-rectores/ — sin este base,
-    // los assets del build se pedirían desde la raíz del dominio y darían 404.
-    base: '/taller-ia-rectores/',
+    // los assets del build se pedirían desde la raíz del dominio y darían
+    // 404. Solo para `build`: si aplicara también en `dev`, localhost:5173
+    // dejaría de servir en la raíz y rompería todo el flujo de desarrollo.
+    base: command === 'build' ? '/taller-ia-rectores/' : '/',
     plugins: [react()],
   }
 })
