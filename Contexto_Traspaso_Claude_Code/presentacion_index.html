@@ -248,13 +248,14 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:700;line-height:1.08;c
 .mitocard.mito-veredicto.true .verdict{color:var(--verdad);}
 .mitocard.mito-veredicto.false .verdict{color:var(--mito);}
 .mitocard .explain{font-size:1.05rem;color:var(--ink-soft);line-height:1.5;}
-.situaciones-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.situaciones-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:14px;}
+@media (max-width:900px){.situaciones-grid{grid-template-columns:repeat(4,1fr);}}
 @media (max-width:520px){.situaciones-grid{grid-template-columns:repeat(2,1fr);}}
-.situacion-card{min-height:80px;padding:10px;gap:4px;}
-.situacion-card .mito-numero{font-size:1.35rem;}
-.situacion-card .tap{font-size:.62rem;}
+.situacion-card{min-height:150px;padding:18px 14px;gap:8px;}
+.situacion-card .mito-numero{font-size:2.1rem;}
+.situacion-card .tap{font-size:.72rem;}
 .situacion-card.situacion-revelada{align-items:center;text-align:center;}
-.situacion-card .q{font-size:.74rem;line-height:1.3;color:var(--ink);font-weight:600;}
+.situacion-card .q{font-size:.92rem;line-height:1.35;color:var(--ink);font-weight:600;}
 
 /* fundamentacion */
 .pullquote{
@@ -471,24 +472,24 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:700;line-height:1.08;c
       <p class="lede">Ya usamos la IA para leer una cifra. Ahora vamos a usarla para algo más difícil: pensar una situación real de liderazgo, de las que no se resuelven con un solo indicador — la relación entre familia, escuela y estudiante en nuestra institución.</p>
     </section>
 
-    <!-- 8 MOMENTO2 PASO1 -->
+    <!-- 8 MOMENTO2 PASO1 SITUACIONES -->
     <section class="slide slide--blue">
       <p class="eyebrow">Momento 2 · Paso 1</p>
       <h2 class="title">¿Dónde está hoy mi tríada?</h2>
-      <div class="grid grid-2">
-        <div>
-          <p class="sub" style="margin-bottom:10px;">Toquen una tarjeta para revelar la situación que le toca a su institución:</p>
-          <div class="situaciones-grid" id="situaciones"></div>
-        </div>
-        <div>
-          <p class="sub" style="margin-bottom:10px;">Diligencien, en la herramienta digital (el enlace que ya tienen abierto), estos puntos:</p>
-          <div class="grid" style="gap:8px;" id="preguntasguia"></div>
-          <div class="card" style="margin-top:14px;background:var(--primary-soft);border:none;">
-            <h3 style="color:var(--primary);">Su desafío de liderazgo</h3>
-            <p class="mono" style="color:var(--ink);">"¿Cómo podría transformar ______ para lograr que ______?"</p>
-            <p class="sub" style="margin-top:10px;">Ejemplo: "¿Cómo podría transformar las reuniones de padres en espacios de participación real para lograr que las familias acompañen el aprendizaje en casa?"</p>
-          </div>
-        </div>
+      <p class="lede">Toquen una tarjeta para revelar la situación que le toca a su institución:</p>
+      <div class="situaciones-grid" id="situaciones"></div>
+    </section>
+
+    <!-- 8b MOMENTO2 PASO1 INSTRUCCIONES -->
+    <section class="slide slide--coral">
+      <p class="eyebrow">Momento 2 · Paso 1</p>
+      <h2 class="title">Diligencien estos puntos en la herramienta</h2>
+      <p class="sub" style="margin-bottom:14px;">En la herramienta digital (el enlace que ya tienen abierto):</p>
+      <div class="grid" style="gap:8px;" id="preguntasguia"></div>
+      <div class="card" style="margin-top:14px;background:var(--primary-soft);border:none;">
+        <h3 style="color:var(--primary);">Su desafío de liderazgo</h3>
+        <p class="mono" style="color:var(--ink);">"¿Cómo podría transformar ______ para lograr que ______?"</p>
+        <p class="sub" style="margin-top:10px;">Ejemplo: "¿Cómo podría transformar las reuniones de padres en espacios de participación real para lograr que las familias acompañen el aprendizaje en casa?"</p>
       </div>
     </section>
 

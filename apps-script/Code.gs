@@ -32,6 +32,20 @@
  *    logueado con la cuenta dueña del script y aceptar el aviso de
  *    "Autorizar acceso" — ni clasp run ni curl pueden hacer ese clic.
  * 4. Pegar la URL /exec en site/.env como VITE_APPS_SCRIPT_URL.
+ *
+ * LOS 13 SHEETS DE RESULTADOS (2026-09-15): ya creados y con sheetId real en
+ * site/src/data/mapaInstituciones.json — se generaron con un endpoint
+ * temporal ('setup-crear-institucion' en doPost + función crearSheetInstitucion,
+ * ya removidos de este archivo tras usarse una sola vez) que recibía cada
+ * institución por POST (datos extraídos de Info_Comite/*.xlsx) y usaba
+ * SpreadsheetApp.create + DriveApp para crear, llenar, compartir como
+ * "cualquiera con el enlace: lector" y mover el Sheet a la carpeta
+ * "Capacitación rectores IA". Igual que con el Sheet de seguimiento, la
+ * primera vez que el código usó DriveApp pidió una reautorización interactiva
+ * (Ejecutar una función de prueba desde el editor, no vía Web App). Si hace
+ * falta recrear o agregar una institución más adelante, este es el patrón a
+ * reusar: no hay que reinventar la migración de datos, solo restaurar
+ * temporalmente ese endpoint.
  */
 
 // Sheet "Seguimiento Taller IA Rectores" ya creado y configurado dentro de
@@ -58,7 +72,6 @@ function doGet() {
 }
 
 function doPost(e) {
-  const ss = SpreadsheetApp.openById(SHEET_ID);
   let datos;
   try {
     datos = JSON.parse(e.postData.contents);
@@ -66,6 +79,7 @@ function doPost(e) {
     return respuestaJson({ ok: false, error: 'JSON inválido' });
   }
 
+  const ss = SpreadsheetApp.openById(SHEET_ID);
   if (datos.tipo === 'momento1') {
     escribirFila(ss.getSheetByName(TAB_MOMENTO1), CAMPOS_MOMENTO1, datos);
   } else if (datos.tipo === 'momento2') {
@@ -97,7 +111,7 @@ function generarYEnviarInforme(d) {
       'Hola ' + d.nombre + ',\n\n' +
       'Adjunto va tu informe con los resultados del Momento 1 (' + d.institucionNombre + ' frente a Manizales) ' +
       'y la estrategia 3×3 que construiste en el Momento 2.\n\n' +
-      'Comité de Cafeteros de Caldas · Escuela Nueva',
+      'Comité de Cafeteros de Caldas · Área de Educación',
     attachments: [pdf],
   });
 }
@@ -148,7 +162,7 @@ function construirHtmlInforme(d) {
     '<p><strong>Familia:</strong> ' + escaparHtml(d.estrategiaFamilia) + '</p>' +
     '<p><strong>Escuela:</strong> ' + escaparHtml(d.estrategiaEscuela) + '</p>' +
     '<p><strong>IA como apoyo:</strong> ' + escaparHtml(d.estrategiaIa) + '</p>' +
-    '<p style="margin-top:24px;color:#7b8794;font-size:12px;">Comité de Cafeteros de Caldas · Escuela Nueva</p>' +
+    '<p style="margin-top:24px;color:#7b8794;font-size:12px;">Comité de Cafeteros de Caldas · Área de Educación</p>' +
     '</body></html>'
   );
 }

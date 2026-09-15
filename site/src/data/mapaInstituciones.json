@@ -1,15 +1,15 @@
 {
-  "giovanni-montini": { "nombre": "Giovanni Montini", "correlativo": 1, "esBaseline": false, "sheetId": null },
-  "granada": { "nombre": "Granada", "correlativo": 2, "esBaseline": false, "sheetId": null },
-  "jose-antonio-galan": { "nombre": "José Antonio Galán", "correlativo": 3, "esBaseline": false, "sheetId": null },
-  "la-cabana": { "nombre": "La Cabaña", "correlativo": 4, "esBaseline": false, "sheetId": null },
-  "la-linda": { "nombre": "La Linda", "correlativo": 5, "esBaseline": false, "sheetId": null },
-  "la-trinidad": { "nombre": "La Trinidad", "correlativo": 6, "esBaseline": false, "sheetId": null },
-  "la-violeta": { "nombre": "La Violeta", "correlativo": 7, "esBaseline": false, "sheetId": null },
-  "malteria": { "nombre": "Maltería", "correlativo": 8, "esBaseline": false, "sheetId": null },
-  "maria-goretti": { "nombre": "María Goretti", "correlativo": 9, "esBaseline": false, "sheetId": null },
-  "miguel-antonio-caro": { "nombre": "Miguel Antonio Caro", "correlativo": 10, "esBaseline": false, "sheetId": null },
-  "san-peregrino": { "nombre": "San Peregrino", "correlativo": 11, "esBaseline": false, "sheetId": null },
-  "serafico": { "nombre": "Seráfico", "correlativo": 12, "esBaseline": false, "sheetId": null },
-  "caldas": { "nombre": "Manizales (consolidado)", "correlativo": 100, "esBaseline": true, "sheetId": null }
+  "giovanni-montini": { "nombre": "Giovanni Montini", "correlativo": 1, "esBaseline": false, "sheetId": "194v-Eq4LTTSCg0nObeGfU1soJ-OElJW9VF38RfliXrY" },
+  "granada": { "nombre": "Granada", "correlativo": 2, "esBaseline": false, "sheetId": "1vUuYh56dDvEZnFH91lOxKUnPPySkEgSM3UujvRyy6fk" },
+  "jose-antonio-galan": { "nombre": "José Antonio Galán", "correlativo": 3, "esBaseline": false, "sheetId": "191hz5MUaA_uPBBRtQ8WeTi2tbI9YK-3H8AX-_Ply-C4" },
+  "la-cabana": { "nombre": "La Cabaña", "correlativo": 4, "esBaseline": false, "sheetId": "1gGDki2wud91C_BkLRVKWYiQSifDccqy7t_Jd-8DOzFg" },
+  "la-linda": { "nombre": "La Linda", "correlativo": 5, "esBaseline": false, "sheetId": "1-FVCyuGioIqWWYxMsM9MtuRXyNyS-HBtxe7-82mVkpk" },
+  "la-trinidad": { "nombre": "La Trinidad", "correlativo": 6, "esBaseline": false, "sheetId": "11IBqfrVk4VVXQyAe1KiHnEljgwQzahTKWWRc39YLTr8" },
+  "la-violeta": { "nombre": "La Violeta", "correlativo": 7, "esBaseline": false, "sheetId": "14HNDRQiLMqivcH7_gOVEr93yX440AOXrHA_74xgBlW0" },
+  "malteria": { "nombre": "Maltería", "correlativo": 8, "esBaseline": false, "sheetId": "1R46be2n9o9CNkw7wrQwmYigs1FnpXa6yFkX6rU9BzSc" },
+  "maria-goretti": { "nombre": "María Goretti", "correlativo": 9, "esBaseline": false, "sheetId": "10SYSJMd-XSA7dvtbfZW7StwTKeD6UYNftjLTZVf8V1s" },
+  "miguel-antonio-caro": { "nombre": "Miguel Antonio Caro", "correlativo": 10, "esBaseline": false, "sheetId": "1VzVZr3mYkM05uYlZ_tv8qOWV8Pa-VQKOxpDGeJuqUmQ" },
+  "san-peregrino": { "nombre": "San Peregrino", "correlativo": 11, "esBaseline": false, "sheetId": "1jp9r1djaSvrmKjvr8xiyWqjj-2XCbvJpbEE9AEewBGU" },
+  "serafico": { "nombre": "Seráfico", "correlativo": 12, "esBaseline": false, "sheetId": "1oCoqNUrKpbHzfJAKaC9Ta3jM7k_APpgoT03hfteTttg" },
+  "caldas": { "nombre": "Manizales (consolidado)", "correlativo": 100, "esBaseline": true, "sheetId": "1Ln7gsJREsGUNKfBwvaEVR16AY8j1F489b39bGR1TPaA" }
 }

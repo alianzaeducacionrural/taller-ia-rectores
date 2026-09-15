@@ -734,6 +734,7 @@
 }
 
 .taller-campo input[type='text'],
+.taller-campo input[type='email'],
 .taller-campo select,
 .taller-campo textarea {
   padding: 10px 12px;
