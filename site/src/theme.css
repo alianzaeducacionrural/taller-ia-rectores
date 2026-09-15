@@ -1,0 +1,92 @@
+:root {
+  /* Gris pizarra */
+  --pizarra-900: #161d22;
+  --pizarra-800: #1f2933;
+  --pizarra-700: #2c3844;
+  --pizarra-600: #3e4c59;
+  --pizarra-500: #5a6b78;
+  --pizarra-400: #7b8794;
+  --pizarra-300: #9aa5b1;
+  --pizarra-200: #cbd2d9;
+  --pizarra-100: #e4e7eb;
+  --pizarra-50: #f4f6f7;
+
+  /* Turquesa */
+  --turquesa-700: #0f766e;
+  --turquesa-600: #0d9488;
+  --turquesa-500: #14b8a6;
+  --turquesa-400: #2dd4bf;
+  --turquesa-100: #ccfbf1;
+  --turquesa-50: #f0fdfa;
+
+  /* Institución vs. Caldas */
+  --color-institucion: var(--turquesa-600);
+  --color-caldas: var(--pizarra-400);
+
+  /* Niveles de desempeño */
+  --nivel-insuficiente: #dc2626;
+  --nivel-minimo: #f59e0b;
+  --nivel-satisfactorio: #65a30d;
+  --nivel-avanzado: var(--turquesa-600);
+
+  --color-bg: var(--pizarra-50);
+  --color-superficie: #ffffff;
+  --color-borde: var(--pizarra-200);
+  --color-texto: var(--pizarra-800);
+  --color-texto-tenue: var(--pizarra-500);
+  --color-texto-invertido: #ffffff;
+
+  --fuente-titulo: 'Fraunces', ui-serif, Georgia, serif;
+  --fuente-texto: 'Work Sans', system-ui, 'Segoe UI', sans-serif;
+  --fuente-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  --radio: 14px;
+  --radio-chico: 8px;
+  --sombra: 0 8px 24px rgba(22, 29, 34, 0.08);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  color: var(--pizarra-900);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--turquesa-700);
+}
+
+button {
+  font-family: inherit;
+}

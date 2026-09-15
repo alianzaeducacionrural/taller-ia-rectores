@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Contiene la URL real del Apps Script Web App (VITE_APPS_SCRIPT_URL) — es un
+# enlace no listado, mismo modelo de acceso que el resto del proyecto (sin
+# login), así que no se versiona por las dudas. .env.example sí se versiona.
+.env
+.env.*
+!.env.example
+
+# Datos generados localmente desde Info_Comite/ (contienen nombres reales de
+# estudiantes) — nunca deben llegar a git ni a un build publicado en GitHub
+# Pages. Se regeneran con `node scripts/generar-datos-locales.mjs`.
+# mapaInstituciones.json (sin sufijo "Local") SÍ se versiona: es el mapa de
+# producción slug -> Google Sheet ID y no contiene datos de estudiantes.
+src/data/instituciones/
+src/data/mapaInstitucionesLocal.json
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

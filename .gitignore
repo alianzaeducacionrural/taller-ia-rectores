@@ -1,0 +1,12 @@
+# Datos fuente con nombres reales de estudiantes (Detalle Estudiantes /
+# Detalle Estudiantes (ref)). Nunca deben llegar a un repo que pueda
+# terminar en un remoto público — el mismo principio que ya aplica a
+# site/.gitignore para los datos generados a partir de estos archivos.
+Info_Comite/
+Contexto_Traspaso_Claude_Code/Info_Comite/
+**/~$*.xlsx
+
+node_modules/
+dist/
+*.log
+.DS_Store

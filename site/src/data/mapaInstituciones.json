@@ -1,0 +1,15 @@
+{
+  "giovanni-montini": { "nombre": "Giovanni Montini", "correlativo": 1, "esBaseline": false, "sheetId": null },
+  "granada": { "nombre": "Granada", "correlativo": 2, "esBaseline": false, "sheetId": null },
+  "jose-antonio-galan": { "nombre": "José Antonio Galán", "correlativo": 3, "esBaseline": false, "sheetId": null },
+  "la-cabana": { "nombre": "La Cabaña", "correlativo": 4, "esBaseline": false, "sheetId": null },
+  "la-linda": { "nombre": "La Linda", "correlativo": 5, "esBaseline": false, "sheetId": null },
+  "la-trinidad": { "nombre": "La Trinidad", "correlativo": 6, "esBaseline": false, "sheetId": null },
+  "la-violeta": { "nombre": "La Violeta", "correlativo": 7, "esBaseline": false, "sheetId": null },
+  "malteria": { "nombre": "Maltería", "correlativo": 8, "esBaseline": false, "sheetId": null },
+  "maria-goretti": { "nombre": "María Goretti", "correlativo": 9, "esBaseline": false, "sheetId": null },
+  "miguel-antonio-caro": { "nombre": "Miguel Antonio Caro", "correlativo": 10, "esBaseline": false, "sheetId": null },
+  "san-peregrino": { "nombre": "San Peregrino", "correlativo": 11, "esBaseline": false, "sheetId": null },
+  "serafico": { "nombre": "Seráfico", "correlativo": 12, "esBaseline": false, "sheetId": null },
+  "caldas": { "nombre": "Manizales (consolidado)", "correlativo": 100, "esBaseline": true, "sheetId": null }
+}
