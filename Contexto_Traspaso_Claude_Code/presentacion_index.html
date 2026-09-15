@@ -198,13 +198,19 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:700;line-height:1.08;c
 }
 
 /* prompt code block */
+.promptbox-wrap{position:relative;}
+.promptbox-wrap::after{
+  content:"";position:absolute;left:1px;right:9px;bottom:1px;height:32px;
+  background:linear-gradient(to bottom, transparent, var(--surface-2));
+  border-radius:0 0 14px 14px;pointer-events:none;
+}
 .promptbox{
   background:var(--surface-2);
   border:1px solid var(--line);
   border-left:4px solid var(--primary);
   border-radius:4px 14px 14px 4px;
   padding:20px 24px;
-  max-height:min(46vh,420px);
+  max-height:min(50vh,440px);
   overflow-y:auto;
   font-family:"JetBrains Mono",monospace;
   font-size:.86rem;
@@ -360,11 +366,7 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:700;line-height:1.08;c
       <div class="cover-inner">
         <p class="eyebrow">Comité de Cafeteros de Caldas · Área de Educación</p>
         <h1 class="title">La IA como copiloto<br>de la gestión directiva</h1>
-        <p class="sub">Dos momentos, un mismo propósito: pensar mejor sin dejar de decidir nosotros mismos.</p>
-        <div class="meta-row">
-          <span class="pill">Momento 1 · Resultados</span>
-          <span class="pill">Momento 2 · Tríada familia–escuela–estudiante</span>
-        </div>
+        <p class="sub">Hoy no aprendemos una herramienta más: aprendemos a mirar con otros ojos lo que ya sabemos hacer bien. Empecemos.</p>
       </div>
     </section>
 
@@ -458,7 +460,7 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:700;line-height:1.08;c
             <span class="sub" style="margin:0;">Prompt del Momento 1</span>
             <button class="copybtn" onclick="copyPrompt('prompt1',this)">Copiar</button>
           </div>
-          <div class="promptbox" id="prompt1"></div>
+          <div class="promptbox-wrap"><div class="promptbox" id="prompt1"></div></div>
         </div>
       </div>
     </section>
@@ -474,7 +476,7 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:700;line-height:1.08;c
     <section class="slide slide--blue">
       <p class="eyebrow">Momento 2 · Paso 1</p>
       <h2 class="title">¿Dónde está hoy mi tríada?</h2>
-      <p class="lede">Toquen una tarjeta para revelar la situación que le toca a su institución:</p>
+      <p class="lede">Selecciona una tarjeta para revelar la situación que le toca a su institución:</p>
       <div class="situaciones-grid" id="situaciones"></div>
     </section>
 
@@ -500,7 +502,7 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:700;line-height:1.08;c
         <span class="sub" style="margin:0;">Prompt — reemplacen [describir situación] por lo del paso 1</span>
         <button class="copybtn" onclick="copyPrompt('prompt2',this)">Copiar</button>
       </div>
-      <div class="promptbox" id="prompt2"></div>
+      <div class="promptbox-wrap"><div class="promptbox" id="prompt2"></div></div>
     </section>
 
     <!-- 10 MOMENTO2 PASO3 -->
@@ -511,7 +513,7 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:700;line-height:1.08;c
         <span class="sub" style="margin:0;">Prompt</span>
         <button class="copybtn" onclick="copyPrompt('prompt3',this)">Copiar</button>
       </div>
-      <div class="promptbox" id="prompt3"></div>
+      <div class="promptbox-wrap"><div class="promptbox" id="prompt3"></div></div>
       <p class="sub" style="margin-top:6px;">No adopten la primera propuesta tal cual — compárenla con estos tres criterios:</p>
       <div class="grid grid-3" id="criteria"></div>
     </section>
